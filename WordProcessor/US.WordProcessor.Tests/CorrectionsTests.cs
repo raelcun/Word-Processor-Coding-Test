@@ -77,5 +77,29 @@ namespace US.WordProcessor.Tests
             Assert.AreEqual("Look at those airplane's over there", c.Sentence);
             Assert.AreEqual("airplane's", c.Word);
         }
+
+        [TestMethod]
+        public void ContractionNeedsApostropheCorrect()
+        {
+            var p = new Paragraph("This isnt very hard.");
+            var c = CorrectionFactory.CreateCorrectionFinder()
+               .Find(p)
+               .Single();
+
+            Assert.AreEqual(CorrectionType.MissingContractionApostrophe, c.Type);
+            Assert.AreEqual("This isnt very hard", c.Sentence);
+            Assert.AreEqual("isnt", c.Word);
+        }
+
+        [TestMethod]
+        public void ContractionNeedsApostropheIncorrect()
+        {
+            var p = new Paragraph("This isn't very hard.");
+            var c = CorrectionFactory.CreateCorrectionFinder()
+               .Find(p)
+               .ToList();
+            
+            Assert.AreEqual(c.Count, 0);
+        }
     }
 }

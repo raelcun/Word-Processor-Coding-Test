@@ -35,19 +35,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CorrectionFactory.cs" />
+    <Compile Include="CorrectionFinder.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="ICorrectionFinder.cs" />
     <Compile Include="CorrectionType.cs" />
     <Compile Include="Correction.cs" />
     <Compile Include="Internal\Definition.cs" />
     <Compile Include="Internal\DefinitionReader.cs" />
     <Compile Include="Internal\Dictionary.cs" />
-    <Compile Include="Internal\Optional.cs" />
     <Compile Include="Paragraph.cs" />
     <Compile Include="Sentence.cs" />
     <Compile Include="Internal\SentenceReader.cs" />
     <Compile Include="Internal\WordType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CorrectionFinder -- Implement Me.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

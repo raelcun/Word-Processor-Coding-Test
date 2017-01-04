@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace US.WordProcessor.Internal
 {
-   internal class Dictionary
-   {
-      private static readonly Dictionary<string, Definition> KnownWords
-         = new Dictionary<string, Definition>(StringComparer.CurrentCultureIgnoreCase)
-            {
+    internal class Dictionary
+    {
+        private static readonly Dictionary<string, Definition> KnownWords
+           = new Dictionary<string, Definition>(StringComparer.CurrentCultureIgnoreCase)
+              {
                // pronouns
 
                {"susan", new Definition(WordType.ProperNoun, "Susan", "")},
@@ -27,13 +27,13 @@ namespace US.WordProcessor.Internal
                {"airplanes", new Definition(WordType.Noun, "Airplane", "s")},
                {"airplane's", new Definition(WordType.Noun, "Airplane", "s")},
                {"airplanes'", new Definition(WordType.Noun, "Airplane", "s")},
-            };
-      
-      public Definition Define(string word)
-      {
-         return KnownWords.ContainsKey(word)
-            ? KnownWords[word]
-            : new Definition(WordType.NotAvailable, word, "");
-      }      
-   }
+              };
+
+        public Definition Define(string word)
+        {
+            return KnownWords.ContainsKey(word)
+               ? KnownWords[word]
+               : new Definition(WordType.NotAvailable, word, "");
+        }
+    }
 }
